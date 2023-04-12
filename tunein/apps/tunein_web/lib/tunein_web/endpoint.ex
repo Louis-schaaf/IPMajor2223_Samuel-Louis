@@ -1,13 +1,13 @@
 defmodule TuneinWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :tunein
+  use Phoenix.Endpoint, otp_app: :tunein_web
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_tunein_key",
-    signing_salt: "QpqKCRwD"
+    key: "_tunein_web_key",
+    signing_salt: "6t4iqpPX"
   ]
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
@@ -18,7 +18,7 @@ defmodule TuneinWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :tunein,
+    from: :tunein_web,
     gzip: false,
     only: ~w(assets fonts images favicon.ico robots.txt)
 
@@ -28,7 +28,7 @@ defmodule TuneinWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :tunein
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :tunein_web
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,

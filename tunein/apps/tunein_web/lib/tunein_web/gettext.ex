@@ -20,5 +20,5 @@ defmodule TuneinWeb.Gettext do
 
   See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext, otp_app: :tunein
+  use Gettext, otp_app: :tunein_web
 end
