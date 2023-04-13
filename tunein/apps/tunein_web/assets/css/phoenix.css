@@ -27,6 +27,10 @@ pre{padding: 1em;}
 select {
   width: auto;
 }
+body {
+  margin: 0
+}
+
 
 /* Phoenix promo and logo */
 .phx-hero {
@@ -99,3 +103,9 @@ header nav a {
     margin: 2rem 1rem;
   }
 }
+
+
+.sectionheader{
+  background: linear-gradient(120deg, orange 25%, #51ffc5)
+}
+
