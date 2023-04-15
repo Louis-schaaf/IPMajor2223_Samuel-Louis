@@ -1,7 +1,7 @@
-defmodule Tunein.Accounts.UserToken do
+defmodule Tunein.Models.UserToken do
   use Ecto.Schema
   import Ecto.Query
-  alias Tunein.Accounts.UserToken
+  alias Tunein.Models.UserToken
 
   @hash_algorithm :sha256
   @rand_size 32
@@ -17,8 +17,7 @@ defmodule Tunein.Accounts.UserToken do
     field :token, :binary
     field :context, :string
     field :sent_to, :string
-    belongs_to :user, Tunein.Accounts.User
-
+    belongs_to :user, Tunein.Models.User
     timestamps(updated_at: false)
   end
 

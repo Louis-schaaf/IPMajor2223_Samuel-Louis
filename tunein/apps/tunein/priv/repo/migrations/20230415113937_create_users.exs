@@ -1,19 +1,20 @@
-defmodule Tunein.Repo.Migrations.CreateUsersAuthTables do
+defmodule Tunein.Repo.Migrations.CreateUsers do
   use Ecto.Migration
 
   def change do
     execute "CREATE EXTENSION IF NOT EXISTS citext", ""
 
-    create table(:users) do
+    create table(:user) do
       add :email, :citext, null: false
+      add :username, :string
       add :hashed_password, :string, null: false
       add :confirmed_at, :naive_datetime
     end
 
-    create unique_index(:users, [:email])
+    create unique_index(:user, [:email])
 
     create table(:users_tokens) do
-      add :user_id, references(:users, on_delete: :delete_all), null: false
+      add :user_id, references(:user, on_delete: :delete_all), null: false
       add :token, :binary, null: false
       add :context, :string, null: false
       add :sent_to, :string

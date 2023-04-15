@@ -1,4 +1,4 @@
-defmodule Tunein.Accounts.UserNotifier do
+defmodule Tunein.Models.UserNotifier do
   import Swoosh.Email
 
   alias Tunein.Mailer

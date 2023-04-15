@@ -2,7 +2,7 @@ defmodule TuneinWeb.UserRegistrationController do
   use TuneinWeb, :controller
 
   alias Tunein.Accounts
-  alias Tunein.Accounts.User
+  alias Tunein.Models.User
   alias TuneinWeb.UserAuth
 
   def new(conn, _params) do

@@ -4,7 +4,7 @@ defmodule Tunein.AccountsTest do
   alias Tunein.Accounts
 
   import Tunein.AccountsFixtures
-  alias Tunein.Accounts.{User, UserToken}
+  alias Tunein.Models.{User, UserToken}
 
   describe "get_user_by_email/1" do
     test "does not return the user if the email does not exist" do

@@ -6,7 +6,7 @@ defmodule Tunein.Accounts do
   import Ecto.Query, warn: false
   alias Tunein.Repo
 
-  alias Tunein.Accounts.{User, UserToken, UserNotifier}
+  alias Tunein.Models.{User, UserToken, UserNotifier}
 
   ## Database getters
 
