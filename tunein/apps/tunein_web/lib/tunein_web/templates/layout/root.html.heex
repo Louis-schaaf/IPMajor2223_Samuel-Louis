@@ -21,20 +21,9 @@
             <% end %>
           </ul>
           --%>
-          <ul>
-
-            <li>
-              <%!-- <%= if @current_user do %> --%>
-              <button><a href="/logout" style="color: white;" class="btn btn-primary">Logout</a></button>
-              <%!-- <% else %> --%>
-              <button><a href="/login" style="color: white;" class="btn btn-primary">Login</a></button>
-              <button><a href="/register" style="color: white;" class="btn btn-primary">Register</a></button>
-              <%!-- <% end %> --%>
-            </li>
-
-          </ul>
+          <%= render "_user_menu.html", assigns %>
         </nav>
-        <a href="https://phoenixframework.org/" class="phx-logo" style="width: 136.22px;">
+        <a href="/../../../" class="phx-logo">
           <img src={Routes.static_path(@conn, "/images/tunein.jpg")} style="height: 60px; width: 136.22px;" >
         </a>
       </section>
@@ -42,3 +31,5 @@
     <%= @inner_content %>
   </body>
 </html>
+
+<a href="index.html"></a>

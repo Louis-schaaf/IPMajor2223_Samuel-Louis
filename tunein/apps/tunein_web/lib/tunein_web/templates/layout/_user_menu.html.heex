@@ -1,0 +1,44 @@
+<!--
+  <ul>
+  <%= if @current_user do %>
+    <li><%= @current_user.email %></li>
+    <li><%= link "Settings", to: Routes.user_settings_path(@conn, :edit) %></li>
+    <li><%= link "Log out", to: Routes.user_session_path(@conn, :delete), method: :delete %></li>
+  <% else %>
+    <li><%= link "Register", to: Routes.user_registration_path(@conn, :new) %></li>
+    <li><%= link "Log in", to: Routes.user_session_path(@conn, :new) %></li>
+  <% end %>
+  </ul>
+-->
+
+
+<ul>
+  <%= if @current_user do %>
+  <li>
+    <%= link to: Routes.user_session_path(@conn, :delete), method: :delete do %>
+    <button class="btn btn-primary"><p style="color:white;">log out</p></button>
+    <% end %>
+  </li>
+
+  <li>
+    <%= link to: Routes.user_settings_path(@conn, :edit) do %>
+    <button class="btn btn-primary"><p style="color:white;">Settings</p></button>
+    <% end %>
+  </li>
+
+  <% else %>
+
+  <li>
+    <%= link to: Routes.user_session_path(@conn, :new) do %>
+    <button class="btn btn-primary"><p style="color:white;">Log in</p></button>
+    <% end %>
+  </li>
+
+  <li>
+    <%= link to: Routes.user_registration_path(@conn, :new) do %>
+    <button class="btn btn-primary"><p style="color:white;">Register</p></button>
+    <% end %>
+  </li>
+
+  <% end %>
+</ul>
